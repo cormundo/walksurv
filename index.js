@@ -1,3 +1,22 @@
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+var username;
+
+function start() {
+    username = document.getElementById("user_PID").value;
+    alert("your PID is " + username);
+    while (count > 20);
+        modal.style.display = "none";
+        document.getElementById("surveyElement").style="display:inline-block;width:100%;";
+        document.getElementById("streetscape").style="display:visible";
+        document.getElementById("btn1").style="display:none";
+  };
+
+
+
+
 Survey
      .StylesManager
      .applyTheme("modern");
@@ -183,8 +202,8 @@ function update(){
          survey
              .onComplete
              .add(function (result) {
-                 var PID = "USERID"
-                 var results = PID + "|||" + (keyname) + ":\n" + JSON.stringify(result.data, null, 3) + (count) ;
+                 var PID = username
+                 var results = PID + "|||" + (keyname) + ":\n" + JSON.stringify(result.data, null, 3) + "|||" + (count) ;
                  document
                      .querySelector('#surveyResult')
                      .textContent = results;
@@ -194,8 +213,10 @@ function update(){
              console.log(count);
              console.log(keyname);
              console.log(mapilink);
+             console.log(username);
              survey.clear();
              survey.render();
              });
 
          $("#surveyElement").Survey({model: survey});
+
