@@ -112,7 +112,6 @@ kn96:"GSoAxmKt1HKSZJcNcHN7MA",
 kn97:"GZRNTjjNlzZFMflsAFSHpQ",
 kn98:"h7ohRpaDiZsV71leQQwYkp",
 kn99:"haPOSPYwWmAeXPXhVYi2Yg",
-kn19:"4CP5JE_mlMMzjvDMMgXncg",
 }
 
 var count = 10;
@@ -219,4 +218,3 @@ function update(){
              });
 
          $("#surveyElement").Survey({model: survey});
-
