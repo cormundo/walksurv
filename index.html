@@ -1,140 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
 
-// Get the modal
-var modal = document.getElementById('id01');
+      <style>
 
-var username;
+      body {font-family: Arial, Helvetica, sans-serif;}
 
-function start() {
-    username = document.getElementById("user_PID").value;
-    alert("your PID is " + username);
-    while (count > 20);
-        modal.style.display = "none";
-        document.getElementById("surveyElement").style="display:inline-block;width:100%;";
-        document.getElementById("streetscape").style="display:visible";
-        document.getElementById("btn1").style="display:none";
-  };
+      /* Full-width input fields */
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+
+      /* Set a style for all buttons */
+      button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      }
+
+      button:hover {
+      opacity: 0.8;
+      }
+
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+      }
+
+      /* Center the image and position the close button */
+      .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+      }
+
+      img.avatar {
+      width: 40%;
+      border-radius: 50%;
+      }
+
+      .container {
+      padding: 16px;
+      }
+
+      span.psw {
+      float: right;
+      padding-top: 16px;
+      }
+
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      }
+
+      /* The Close Button (x) */
+      .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+      color: red;
+      cursor: pointer;
+      }
+
+      /* Add Zoom Animation */
+      .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+      }
+
+      @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)}
+      to {-webkit-transform: scale(1)}
+      }
+
+      @keyframes animatezoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+      }
+
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+      }
+      </style>
+
+        <title>Test_Walksurv</title>
+
+        <meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.8.12/survey.jquery.min.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.8.12/modern.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./index.css">
+
+    </head>
+    <body>
 
 
 
+        <button id="btn1" onclick="document.getElementById('id01').style.display='block'" style="display:visible" >Login</button>
 
-Survey
-     .StylesManager
-     .applyTheme("modern");
+              <div id="id01" class="modal">
 
-var knlist = {
-kn10:"2L1qvq6Tg6rMhEwNshr6dQ",
-kn11:"2N_Cl_Gl5fX8_TdLgHP3rQ",
-kn12:"2RbpjbhM3_EfzejfPgzwAw",
-kn13:"2rP8y_ub_alGrzAK_aZrEg",
-kn14:"2S8O9KBwxRlvtZX6kjyS0y",
-kn15:"2Ua5EnPVDwd7LGq6UbT2bQ",
-kn16:"3_17fNbyu2Yw8ozPx8BmkA",
-kn17:"3LB0GSXXVadBlCMhSth3IA",
-kn18:"48JvNwKSgvnWT8nqzWtE3Q",
-kn19:"4CP5JE_mlMMzjvDMMgXncg",
-}
+                <form class="modal-content animate"  onsubmit="return !!start();">
 
-var count = 10;
+                  <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" id="user_PID" placeholder="Enter Participant ID (PID)" name="uname" required>
 
-var knx;
+                    <button type = "submit" >Login</button>
 
-function knxer(){
-  if (window.count === 10) {
-  return knx = "kn10";
-  } else {
-  return knx = ("kn" + count);
-  }};
-
-var keyname;
-
-var mapilink;
-
-function keynamer() {
-		keyname = (knlist[knxer()]);
-}
+                  </div>
+                </form>
+        </div>
 
 
-function mapilinker(){
-	return mapilink = "https://images.mapillary.com/" + (keyname) + "/thumb-1024.jpg";
-}
+        <div id="surveyResult"></div>
 
-function imgur(){
-	document.getElementById('streetscape').src= mapilinker();
-  console.log (mapilink);
-}
+        <div>
+          <img id="streetscape" style="display:none">
+        </div>
 
-var json;
+        <div id="surveyElement" style="display:none"></div>
 
-function jsoner (){
-		knxer();
-		keynamer();
-		mapilinker();
-    imgur();
-		json = {
-pages: [
-{
-name: "page1",
-elements: [
-{
-type: "html",
-name: (keyname),
-visible: false,
-html: (keyname)
-},
-{
-type: "rating",
-name: "Walkability",
-title: "How walkable does this look to you"
-},
-{
-type: "rating",
-name: "Saftey",
-title: "How safe does this look to you"
-},
-{
-type: "rating",
-name: "Comfortability",
-title: "How comfortable does this look to you"
-}
-]
-}
-]
-}
-}
+      <script type="text/javascript" src="./index.js"></script>
 
-jsoner();
-
-
-function update(){
-      knxer();
-      keynamer();
-      mapilinker();
-      imgur();
-      jsoner();
-}
-
-
-
-
-     window.survey = new Survey.Model(json);
-
-         survey
-             .onComplete
-             .add(function (result) {
-                 var PID = username
-                 var results = PID + "|||" + (keyname) + ":\n" + JSON.stringify(result.data, null, 3) + "|||" + (count) ;
-                 document
-                     .querySelector('#surveyResult')
-                     .textContent = results;
-             window.count ++;
-             update();
-             console.log(knx);
-             console.log(count);
-             console.log(keyname);
-             console.log(mapilink);
-             console.log(username);
-             survey.clear();
-             survey.render();
-             });
-
-         $("#surveyElement").Survey({model: survey});
+    </body>
+</html>
