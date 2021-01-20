@@ -22,9 +22,8 @@ var surveyJSON = {pages:[{name:"page1",elements:[{type:"text",name:"PID",title:"
 
 function landed(survey) {
     var demog = JSON.stringify(survey.data, null, 3);
-    alert(demog);
     survey.sendResult('4792c1c9-965e-450b-99ca-e56cfced0bbb');
-    window.location.replace("index.html");
+    window.location.replace("survey.html");
 }
 
 var survey = new Survey.Model(surveyJSON);
