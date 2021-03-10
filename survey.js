@@ -13,6 +13,7 @@ function start() {
   modal.style.display = "none";
   document.getElementById("surveyElement").style = "display:inline-block;width:100%;";
   document.getElementById("streetscape").style = "display:visible";
+  document.getElementById("inst").style = "display:none";
   document.getElementById("btn1").style = "display:none";
 };
 
@@ -132,6 +133,8 @@ var keyname;
 
 var mapilink;
 
+var catched = "false";
+
 function keynamer() {
   keyname = (knlist[knxer()]);
   keyN2 = keyname;
@@ -152,6 +155,14 @@ function usernamer() {
   console.log(PID2);
 }
 
+function catcher() {
+  if (count % 9 === 0){
+    catched = "true";
+  }else{
+    catched = "false";
+  }
+}
+
 var json;
 
 function jsoner() {
@@ -160,7 +171,8 @@ function jsoner() {
   mapilinker();
   imgur();
   usernamer();
-  console.log(username)
+  catcher();
+  console.log(catched);
 
   json = {
     pages: [{
@@ -186,25 +198,54 @@ function jsoner() {
           title: "TIME",
           defaultValue: (count)
         },
+
         {
-          type: "rating",
-          name: "Walkability",
-          title: "How walkable does this look to you"
+         type: "rating",
+         name: "RdSafe",
+         title: "How safe are Pedestrians from motor traffic in this streetscape?",
+         isRequired: true
         },
         {
-          type: "rating",
-          name: "Saftey",
-          title: "How safe does this look to you"
+         type: "rating",
+         name: "CmSafe",
+         title: "How safe are pedestrians from crime in this streetscape?",
+         isRequired: true
         },
         {
-          type: "rating",
-          name: "Comfortability",
-          title: "How comfortable does this look to you"
+         type: "rating",
+         name: "Navig",
+         title: "How easy is it for pedestrians to navigate the built environment in this streetscape?",
+         isRequired: true
+        },
+        {
+         type: "rating",
+         name: "Beaut",
+         title: "How beautiful is this streetscape?",
+         isRequired: true
+        },
+        {
+         type: "rating",
+         name: "Welcm",
+         title: "How welcome would you feel in this section of the street?",
+         isRequired: true
+        },
+        {
+         type: "rating",
+         name: "Walkbl",
+         title: "How \"walkable\" do you think this section of the street is?",
+         isRequired: true
+        },
+        {
+         type: "text",
+         name: "Catchr",
+         visible: (catched),
+         title: "Is there a car in this image? Type YES or NO"
         }
       ]
     }],
     clearInvisibleValues: "none"
   }
+
 
   window.survey = new Survey.Model(json);
   survey.surveyPostId = "466a5d09-27a0-4948-80e7-9754d62655cd";
@@ -225,6 +266,7 @@ function jsoner() {
       console.log(count);
       console.log(keyname);
       console.log(mapilink);
+      console.log(catched);
       console.log(username);
       survey.clear();
       survey.render();

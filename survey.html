@@ -132,11 +132,28 @@
         <script src="https://unpkg.com/jquery"></script>
         <script src="https://surveyjs.azureedge.net/1.8.12/survey.jquery.min.js"></script>
         <link href="https://surveyjs.azureedge.net/1.8.12/modern.css" type="text/css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="./keylist.json"></script>
+
+        <script type="text/javascript" src="./survey.js"></script>
+
         <link rel="stylesheet" href="./index.css">
 
     </head>
     <body>
 
+
+      <div id="inst" style="background-color:green;color:white;padding:20px;">
+      <h2>Instructions</h2>
+      <p>You will be presented a series of images of streetscapes within the cities of Montreal, Canada and Pune, India. These will be presented in a random order. You will be rating and tagging these images for one hour of time, after which you will receive an alert that the exercise is over. You will tag as many images as you can during this time, with an eye towards accurately rating them based on how you would feel about them. Please do not reload the page, as it will restart the exercise timer. However, your submissions will be recorded throughout, and will not be deleted unless you request withdrawall from the exercise. At the end of the exercise, you'll be given a chance to share any additional thoughts you might have. The best way to approah this tagging is to rate the images as you would image answering the question if you were asked it in person, on the street. Please note that occassionally additional questions about the contents of the images may appear in the survey section for each image. You will be asked to rate these streetscapes on several values: </p>
+      <p>1) How safe are pedestrians from traffic in this image? - This question is asking you to try to determine how you would feel walking on this street in terms of the danger posed by vehicles and traffic around you.</p>
+      <p>2) How safe are pedestrians from crime in this image? - This question is asking you to try to determine how you would feel walking on this street in terms of the danger posed by other pedestrians, possible areas for crime and danger, and overall safty.</p>
+      <p>3) How easy is it for pedestrains to navigate the built environment in this image? - This question is asking you to try to determine how you would feel walking on this street in terms of how easy it is to navigate along the pedestrain areas you see pictured.</p>
+      <p>4) How beautiful is this section of the street? - This question is asking you to try to determine how you would feel walking on this street in terms of aesthetic sensibilities regarding your surroundings.</p>
+      <p>5) How welcome would you feel in this section of the street? - This question is asking you to try to determine how you would feel walking on this street in terms of your comfort level cultrually with your surroundings, your sense of belonging, and your guesses as to how the community in this area might receive your presence.</p>
+      <p>6) How walkable is this section of the street? - This question is asking you to try to determine how you would feel overall, considering all the above factors, about the prospect of walking along this section of street.</p>
+      <p> Please click the login button below and enter the Participant Identification Number you were given upon enlisting the excerize. Upon entering your code, the exercise will begin.</p>
+    </div>
 
 
         <button id="btn1" onclick="document.getElementById('id01').style.display='block'" style="display:visible" >Login</button>
@@ -154,6 +171,8 @@
                   </div>
                 </form>
         </div>
+
+
 
 
         <div id="surveyResult"></div>
