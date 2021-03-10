@@ -24,6 +24,23 @@ Survey
   .StylesManager
   .applyTheme("modern");
 
+var knlist_hold =  new Array();
+
+/*
+function loadKN() {
+  $.getJSON('keylist.js', function (data) {
+      knlist_hold = data;
+      console.log (data);
+  }).error(function(){
+          console.log('error: json not loaded');
+      });
+}
+
+
+loadKN ();
+
+*/
+
 var knlist = {
   kn10: "2L1qvq6Tg6rMhEwNshr6dQ",
   kn11: "2N_Cl_Gl5fX8_TdLgHP3rQ",
@@ -202,7 +219,7 @@ function jsoner() {
         {
          type: "rating",
          name: "RdSafe",
-         title: "How safe are Pedestrians from motor traffic in this streetscape?",
+         title: "How safe are pedestrians from motor traffic in this streetscape?",
          isRequired: true
         },
         {
@@ -244,6 +261,7 @@ function jsoner() {
       ]
     }],
     clearInvisibleValues: "none"
+
   }
 
 

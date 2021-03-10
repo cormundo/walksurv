@@ -44,7 +44,7 @@ var surveyJSON = {
     {
      type: "dropdown",
      name: "question1",
-     title: "Please select your gender",
+     title: "Please select the gender identity that best describes you:",
      choices: [
       {
        value: "item1",
@@ -145,7 +145,8 @@ var surveyJSON = {
    ],
    title: "Demographic Information"
   }
- ]
+],
+ completedHtml: "<p><h4>Loading Tagging Exercise...",
 }
 
 function landed(survey) {
