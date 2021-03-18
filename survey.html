@@ -2,6 +2,29 @@
 <html lang="en">
     <head>
 
+      <style>
+      .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+        border-radius: 5px;
+        border-color: black;
+      }
+
+      .box {
+        padding: 10px;
+        border-radius: 10%;
+      }
+
+      .kounter{
+        background-color: #1ab394;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        display: block;
+        font-size: 20px;
+      }
+      </style>
 
         <title>Test_Walksurv</title>
 
@@ -10,6 +33,8 @@
         <script src="https://surveyjs.azureedge.net/1.8.12/survey.jquery.min.js"></script>
         <link href="https://surveyjs.azureedge.net/1.8.12/modern.css" type="text/css" rel="stylesheet"/>
 
+        <script type="text/javascript" src="./keylist.json"></script>
+
         <script type="text/javascript" src="./survey.js"></script>
 
         <link rel="stylesheet" href="./index.css">
@@ -17,17 +42,21 @@
     </head>
     <body>
 
+      <div id = "final" style="display:none">
+        <h1> Thanks for your time. For any questions, please email Corey.Dickinson@mail.mcgill.ca. Your funds should be transferred into your paypal account within a few days. You have been entered into the draw to receive a 100$ gift card, the winner of which will be announced sometime in late May 2021.</h1>
+</div>
 
       <div id="inst" style=" padding:50px">
       <h1>Instructions</h1>
       <p>You will be presented a series of images of streetscapes within the cities of Montreal, Canada and Pune, India. These will be presented in a random order. You will be rating and tagging these images for one hour of time, after which you will receive an alert that the exercise is over. You will tag as many images as you can during this time, with an eye towards accurately rating them based on how you would feel about them. Please do not reload the page, as it will restart the exercise timer. However, your submissions will be recorded throughout, and will not be deleted unless you request withdrawall from the exercise. At the end of the exercise, you'll be given a chance to share any additional thoughts you might have. The best way to approah this tagging is to rate the images as you would image answering the question if you were asked it in person, on the street. Please note that occassionally additional questions about the contents of the images may appear in the survey section for each image. You will be asked to rate these streetscapes on several values: </p>
-      <p>1) How safe are pedestrians from traffic in this image? - This question is asking you to try to determine how you would feel walking on this street in terms of the danger posed by vehicles and traffic around you.</p>
-      <p>2) How safe are pedestrians from crime in this image? - This question is asking you to try to determine how you would feel walking on this street in terms of the danger posed by other pedestrians, possible areas for crime and danger, and overall safty.</p>
-      <p>3) How easy is it for pedestrains to navigate the built environment in this image? - This question is asking you to try to determine how you would feel walking on this street in terms of how easy it is to navigate along the pedestrain areas you see pictured.</p>
+      <p>1) How safe are pedestrians from motor traffic in this streetscape? - This question is asking you to try to determine how you would feel walking on this street in terms of the danger posed by vehicles and traffic around you.</p>
+      <p>2) How safe are pedestrians from crime in this streetscape? - This question is asking you to try to determine how you would feel walking on this street in terms of the danger posed by other pedestrians, possible areas for crime and danger, and overall safty.</p>
+      <p>3) How easy is it for pedestrians to navigate the built environment in this streetscape? - This question is asking you to try to determine how you would feel walking on this street in terms of how easy it is to navigate along the pedestrain areas you see pictured.</p>
       <p>4) How beautiful is this section of the street? - This question is asking you to try to determine how you would feel walking on this street in terms of aesthetic sensibilities regarding your surroundings.</p>
       <p>5) How welcome would you feel in this section of the street? - This question is asking you to try to determine how you would feel walking on this street in terms of your comfort level cultrually with your surroundings, your sense of belonging, and your guesses as to how the community in this area might receive your presence.</p>
-      <p>6) How walkable is this section of the street? - This question is asking you to try to determine how you would feel overall, considering all the above factors, about the prospect of walking along this section of street.</p>
+      <p>6) How walkable is this section of the street? - This question is asking you to try to determine how you would feel overall about the prospect of walking along this section of street.</p>
       <p> Please click the login button below and enter the Participant Identification Number you were given upon enlisting the excerize. Upon entering your code, the exercise will begin.</p>
+      <h3> NOTE: Do not reload the exercise once you have begun, it will reset your progress. If you do need to reload, please let the administrators of the test know, and continue for the remaining period of time. The administrators will confirm that you have fulfilled the full amount of time involved in the study.</h3>
     </div>
 
 
@@ -52,11 +81,18 @@
 
         <div id="surveyResult"></div>
 
-        <div>
-          <img id="streetscape" style="display:none">
+
+<div id = "flexo" class = "flex-container">
+
+        <div id = "left"  style="display:none">
+          <div id="kounter1" class = "kounter">Exercise Time Remaining: <span id="time"></div>
+          <div id="kounter2" class = "kounter">Images Rated: 0</div>
+          <img id="streetscape" class = "box">
         </div>
 
-        <div id="surveyElement" style="display:none"></div>
+        <div id="surveyElement" class = "box" style="display:none"></div>
+
+</div>
 
       <script type="text/javascript" src="./survey.js"></script>
 

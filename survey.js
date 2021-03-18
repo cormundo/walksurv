@@ -7,15 +7,49 @@ function start() {
   username = document.getElementById("user_PID").value;
   alert("your PID is " + username);
 
+  var oneMin = 60 * 60,
+      display = document.querySelector('#time');
+  startTimer(oneMin, display);
+
   jsoner();
 
-  while (count > 20);
+  while (count > 1);
   modal.style.display = "none";
-  document.getElementById("surveyElement").style = "display:inline-block;width:100%;";
-  document.getElementById("streetscape").style = "display:visible";
+  document.getElementById("surveyElement").style = "display:visible";"height:100%";
+  document.getElementById("left").style = "display:visible";"height:auto";"width:100%";
+  document.getElementById("kounter1").style = "display:flex"; "width:50%";"justify:left";
+  document.getElementById("kounter2").style = "display:flex";"width:50%";"justify:right";
+  document.getElementById("streetscape").style = "display:visible";"height:auto";
   document.getElementById("inst").style = "display:none";
   document.getElementById("btn1").style = "display:none";
 };
+
+function startTimer(duration, display) {
+
+    var minTimer = duration, minutes, seconds;
+
+    setInterval(function () {
+        minutes = parseInt(minTimer / 60)
+        seconds = parseInt(minTimer % 60);
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--minTimer < 0) {
+    visualTimer.classList.remove("height-change");
+    minTimer = duration
+}
+
+else if (minTimer == 0) {
+
+  alert("You have completed the exercise. Thank you for your participation.")
+  document.getElementById("flexo").style = "display:none";
+  document.getElementById("final").style = "display:visible";
+}
+
+    }, 1000);
+}
 
 
 
@@ -42,6 +76,15 @@ loadKN ();
 */
 
 var knlist = {
+  kn1: "FCoB5vzuWP6QzQFMFZjlRA",
+  kn2: "fiKGasmM-hRLVcyttWTbhQ",
+  kn3: "Fm1X2BPaawzqu_3oQvGBbX",
+  kn4: "Ftrb5WUSBLh1b4iq5rScPg",
+  kn5: "g8QcE3OxGgNuykxuEA6H3Q",
+  kn6: "GSoAxmKt1HKSZJcNcHN7MA",
+  kn7: "GZRNTjjNlzZFMflsAFSHpQ",
+  kn8: "h7ohRpaDiZsV71leQQwYkp",
+  kn9: "haPOSPYwWmAeXPXhVYi2Yg",
   kn10: "2L1qvq6Tg6rMhEwNshr6dQ",
   kn11: "2N_Cl_Gl5fX8_TdLgHP3rQ",
   kn12: "2RbpjbhM3_EfzejfPgzwAw",
@@ -134,12 +177,12 @@ var knlist = {
   kn99: "haPOSPYwWmAeXPXhVYi2Yg",
 }
 
-var count = 10;
+var count = 1;
 
 var knx;
 
 function knxer() {
-  if (window.count === 10) {
+  if (window.count === 1) {
     return knx = "kn10";
   } else {
     return knx = ("kn" + count);
@@ -220,43 +263,60 @@ function jsoner() {
          type: "rating",
          name: "RdSafe",
          title: "How safe are pedestrians from motor traffic in this streetscape?",
-         isRequired: true
+         isRequired: true,
+         maxRateDescription: "Completely safe",
+         minRateDescription: "Extremely dangerous"
         },
         {
          type: "rating",
          name: "CmSafe",
          title: "How safe are pedestrians from crime in this streetscape?",
-         isRequired: true
+         isRequired: true,
+         maxRateDescription: "Completely safe",
+         minRateDescription: "High danger of crime"
         },
         {
          type: "rating",
          name: "Navig",
          title: "How easy is it for pedestrians to navigate the built environment in this streetscape?",
-         isRequired: true
+         isRequired: true,
+         maxRateDescription: "Very easy to navigate",
+         minRateDescription: "Very difficult to navigate"
+
         },
         {
          type: "rating",
          name: "Beaut",
          title: "How beautiful is this streetscape?",
-         isRequired: true
+         isRequired: true,
+         maxRateDescription: "Extremely nice looking",
+         minRateDescription: "Very ugly"
+
         },
         {
          type: "rating",
          name: "Welcm",
          title: "How welcome would you feel in this section of the street?",
-         isRequired: true
+         isRequired: true,
+         maxRateDescription: "Entirely comfortable",
+         minRateDescription: "Completely unwelcome"
         },
         {
          type: "rating",
          name: "Walkbl",
          title: "How \"walkable\" do you think this section of the street is?",
-         isRequired: true
+         isRequired: true,
+         minRateDescription: "Very low walkablity",
+         maxRateDescription: "Very high walkability"
+
         },
         {
-         type: "text",
+         type: "rating",
          name: "Catchr",
          visible: (catched),
-         title: "Is there a car in this image? Type YES or NO"
+         title: "Approximately how many cars are in this image?",
+          minRateDescription: "Very few cars (1 or Zero)",
+          maxRateDescription: "Completely full of cars (5 or more)"
         }
       ]
     }],
@@ -303,4 +363,5 @@ function update() {
   imgur();
   usernamer();
   jsoner();
+  document.getElementById("kounter2").innerHTML = "Images Tagged: " + (count - 1);
 }
