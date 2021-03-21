@@ -8,22 +8,26 @@ var surveyJSON = {
     {
      type: "text",
      name: "question1",
+     isRequired: true,
      title: "Please enter your First Name"
     },
     {
      type: "text",
      name: "question2",
+     isRequired: true,
      title: "Please enter your Surname"
     },
     {
      type: "text",
      name: "question9",
+     isRequired: true,
      title: "Please enter your contact email:"
     },
     {
      type: "text",
      name: "question3",
-     title: "City of Residence"
+     isRequired: true,
+     title: "City and Country of Residence"
     },
     {
      type: "text",
