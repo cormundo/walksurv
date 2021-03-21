@@ -10,11 +10,8 @@ Survey
     .ComponentCollection
     .Instance
     .add({
-        //Unique component name. It becomes a new question type. Please note, it should be written in lowercase.
         name: "country",
-        //The text that shows on toolbox
         title: "Country",
-        //The actual question that will do the job
         questionJSON: {
             type: "dropdown",
             optionsCaption: "Select a country...",
@@ -178,13 +175,13 @@ var surveyJSON = {
 
 function landed(survey) {
     var demog = JSON.stringify(survey.data, null, 3);
-    survey.sendResult('4792c1c9-965e-450b-99ca-e56cfced0bbb');
+    survey.sendResult('44536697-2354-41a0-afe9-fc49c26186f3');
     console.log(demog)
     setTimeout(() => {  window.location.replace("survey.html");},3000);
 }
 
 var survey = new Survey.Model(surveyJSON);
-survey.surveyPostId = "fbcdab6b-04f4-4019-b747-1207e65c386e";
+survey.surveyPostId = "9e660287-4841-4896-aaf4-b6d4f42efeee";
 $("#surveyElement").Survey({
     model: survey,
     onComplete: landed
