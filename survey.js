@@ -25,16 +25,12 @@ function checkCookie() {
   if (user != "") {
     alert("Welcome again " + user);
   } else {
-    user = prompt("Please enter your name:", "");
+    user = username;
     if (user != "" && user != null) {
       setCookie("userN", user, 365);
     }
   }
 }
-
-
-checkCookie();
-
 
 var knlist = keyNameList;
 
@@ -45,6 +41,8 @@ var username;
 function start() {
   username = document.getElementById("user_PID").value;
   alert("your PID is " + username);
+    
+  checkCookie();
 
   var oneMin = 60 * 60,
       display = document.querySelector('#time');
