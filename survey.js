@@ -20,7 +20,7 @@ function getCookie(cname) {
   return "";
 }
 
-function checkCookie() {
+function checkCookieName() {
   var user = getCookie("userN");
   if (user != "") {
     alert("Welcome again " + user);
@@ -32,7 +32,23 @@ function checkCookie() {
   }
 }
 
+function checkCookieCount() {
+  var userCNT = getCookie("userC");
+  if (userCNT != "") {
+    alert("Your Previous Count: " + userCNT);
+    // make global count update
+    count = (userCNT*1) + 1
+  } else {
+    kount = count;
+    if (user != "" && user != null) {
+      setCookie("userC", kount, 365);
+    }
+  }
+}
+
 //end cookie section
+
+//cookie stuff over
 
 var knlist = keyNameList;
 
@@ -43,9 +59,10 @@ var username;
 function start() {
   username = document.getElementById("user_PID").value;
   alert("your PID is " + username);
-    
-  checkCookie();
 
+  checkCookieName();
+  checkCookieCount();
+  
   var oneMin = 60 * 60,
       display = document.querySelector('#time');
   startTimer(oneMin, display);
@@ -54,11 +71,11 @@ function start() {
 
   while (count > 1);
   modal.style.display = "none";
-  document.getElementById("surveyElement").style = "display:visible";"height:100%";
-  document.getElementById("left").style = "display:visible";"height:auto";"width:100%";
-  document.getElementById("kounter1").style = "display:flex"; "width:50%";"justify:left";
-  document.getElementById("kounter2").style = "display:flex";"width:50%";"justify:right";
-  document.getElementById("streetscape").style = "display:visible";"height:auto";
+  document.getElementById("surveyElement").style = "display:visible;height:auto;width:50%";
+  document.getElementById("left").style = "display:visible;height:auto;width:50%";
+  document.getElementById("kounter1").style = "display:flex;width:100%;justify:left";
+  document.getElementById("kounter2").style = "display:flex;width:100%;justify:right";
+  document.getElementById("streetscape").style = "display:flex;width:100%";
   document.getElementById("inst").style = "display:none";
   document.getElementById("btn1").style = "display:none";
 };
@@ -89,8 +106,6 @@ else if (minTimer == 0) {
 
     }, 1000);
 }
-
-
 
 
 Survey
