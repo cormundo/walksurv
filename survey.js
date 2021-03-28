@@ -40,7 +40,7 @@ function checkCookieCount() {
     count = (userCNT*1) + 1
   } else {
     kount = count;
-    if (user != "" && user != null) {
+    if (kount != "" && kount != null) {
       setCookie("userC", kount, 365);
     }
   }
