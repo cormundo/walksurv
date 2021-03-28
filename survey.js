@@ -32,6 +32,8 @@ function checkCookie() {
   }
 }
 
+//end cookie section
+
 var knlist = keyNameList;
 
 var modal = document.getElementById('id01');
