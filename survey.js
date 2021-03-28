@@ -37,7 +37,7 @@ function checkCookieCount() {
   if (userCNT != "") {
     alert("Your Previous Count: " + userCNT);
     // make global count update
-    count = (userCNT*1) + 1
+    count = userCNT
   } else {
     kount = count;
     if (kount != "" && kount != null) {
