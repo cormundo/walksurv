@@ -294,7 +294,6 @@ function jsoner() {
 }
 
 function update() {
-  setCookie("userC", count, 365);
   knxer();
   keynamer();
   mapilinker();
