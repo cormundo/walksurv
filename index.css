@@ -49,6 +49,13 @@ background-color: #f44336;
   border-radius: 10px;
 }
 
+button.pause {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  width: auto;
+}
+
 /* Center the image and position the close button */
 .imgcontainer {
 text-align: center;
