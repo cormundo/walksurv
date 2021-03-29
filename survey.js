@@ -37,8 +37,9 @@ function checkCookieCount() {
   if (userCNT != "") {
     alert("Your Previous Count: " + userCNT);
     // make global count update
-    count = userCNT;
-    return;
+    cookieCNT = userCNT;
+    count = count + (cookieCNT*1)
+    alert(cookieCNT);
   } else {
     kount = count;
     alert("Count is: " + kount);
@@ -47,8 +48,6 @@ function checkCookieCount() {
     }
   }
 }
-
-var testc;
 
 //end cookie section
 
