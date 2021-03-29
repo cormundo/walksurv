@@ -40,6 +40,7 @@ function checkCookieCount() {
     cookieCNT = userCNT;
     count = count + (cookieCNT*1)
     alert(cookieCNT);
+    return;
   } else {
     kount = count;
     alert("Count is: " + kount);
