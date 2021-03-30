@@ -52,7 +52,7 @@ function checkCookieCount() {
     if (userTime != "") {
       alert("Your Previous Time: " + userTime);
       var mLeft = userTime.toString();
-      mLeft = mleft.split(:);
+      mLeft = mleft.split(":");
       mleft = mleft[0];
       console.log(mLeft);
       mLeft = parseInt(mLeft);
