@@ -52,6 +52,7 @@ function checkCookieCount() {
 function cookieCounter () {
   if (window.count > 1)
     count = cookieCNT;
+	console.log ("cookiecountcount" + count);
 }
 
 function start() {
