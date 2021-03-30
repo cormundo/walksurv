@@ -41,6 +41,7 @@ function checkCookieCount() {
     alert(cookieCNT);
     return;
   } else {
+      count = 1;
       cookieCNT = 1;
       setCookie("userC", count, 365);
     }
