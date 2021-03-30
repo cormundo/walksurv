@@ -51,7 +51,8 @@ function checkCookieCount() {
 
 function cookieCounter () {
   if (window.count > 1)
-   	count = cookieCNT;
+	console.log ("countb4add" + count);
+   	count = (count*1) + (cookieCNT*1);
 	console.log ("cookiecountcount" + count);
 	return;
 }
@@ -307,6 +308,7 @@ function jsoner() {
 }
 
 function update() {
+  console.log ("updatecount" + count);
   setCookie("userC", count, 365);
   cookieCounter ();
   jsoner();
