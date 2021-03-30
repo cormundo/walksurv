@@ -308,7 +308,7 @@ function jsoner() {
 }
 
 function update() {
-  console.log ("updatecount" + count);
+  console.log ("updatecount" + window.count);
   setCookie("userC", count, 365);
   cookieCounter ();
   jsoner();
