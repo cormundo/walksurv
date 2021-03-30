@@ -50,7 +50,7 @@ function checkCookieCount() {
 }
 
 function cookieCounter () {
-  if (window.count > 1)
+  if (window.count === 2)
 	console.log ("countb4add" + count);
    	count = (count*1) + (cookieCNT*1);
 	console.log ("cookiecountcount" + count);
