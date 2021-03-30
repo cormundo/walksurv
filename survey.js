@@ -38,7 +38,6 @@ function checkCookieCount() {
     alert("Your Previous Count: " + userCNT);
     // make global count update
     cookieCNT = userCNT;
-    count = count + (cookieCNT*1)
     alert(cookieCNT);
     return;
   } else {
@@ -48,6 +47,11 @@ function checkCookieCount() {
       setCookie("userC", kount, 365);
     }
   }
+}
+
+function cookieCounter () {
+  if (window.count > 1)
+    count = cookieCNT;
 }
 
 function start() {
@@ -302,6 +306,7 @@ function jsoner() {
 
 function update() {
   setCookie("userC", count, 365);
+  cookieCounter ();
   jsoner();
   document.getElementById("kounter2").innerHTML = "Images Tagged: " + (count - 1);
 }
