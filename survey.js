@@ -43,7 +43,7 @@ function checkCookieCount() {
     return;
   } 
   }
-}
+
 
 function cookieCounter () {
   if (window.count === 2)
