@@ -64,8 +64,7 @@ function start() {
   run_clock('clockdiv',deadline);
 
   jsoner();
-
-  while (count > 1);
+	
   modal.style.display = "none";
   document.getElementById("surveyElement").style = "display:visible;height:auto;width:50%";
   document.getElementById("left").style = "display:visible;height:auto;width:50%";
