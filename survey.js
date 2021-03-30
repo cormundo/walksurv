@@ -41,10 +41,8 @@ function checkCookieCount() {
     alert(cookieCNT);
     return;
   } else {
-    kount = count;
-    alert("Count is: " + kount);
-    if (kount != "" && kount != null) {
-      setCookie("userC", kount, 365);
+      cookieCNT = 1;
+      setCookie("userC", count, 365);
     }
   }
 }
