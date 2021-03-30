@@ -56,6 +56,7 @@ function checkCookieCount() {
       console.log(mLeft);
       mLeft = parseInt(mLeft);
       time_in_minutes = mLeft;
+      console.log(time_in_minutes);
     } }
 
 function cookieCounter () {
@@ -73,8 +74,7 @@ function start() {
   checkCookieName();
   checkCookieCount();
   cookieCounter();
-  checkCookieTime()
-
+  checkCookieTime();
 
   run_clock('clockdiv',deadline);
 
