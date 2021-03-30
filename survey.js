@@ -30,7 +30,7 @@ function checkCookieName() {
       setCookie("userN", user, 365);
     }
   }
-}
+
 
 function checkCookieCount() {
   var userCNT = getCookie("userC");
