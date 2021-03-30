@@ -47,6 +47,16 @@ function checkCookieCount() {
     }
   }
 
+  function checkCookieTime() {
+    var userTime = getCookie("userT");
+    if (userTime != "") {
+      alert("Your Previous Time: " + userTime);
+      var mLeft = userTime.toString();
+      mLeft = userT.slice(0,-3);
+      console.log(mLeft);
+      mLeft = parseInt(mLeft);
+      time_in_minutes = mLeft;
+    } }
 
 function cookieCounter () {
   if (window.count === 2)
@@ -62,13 +72,14 @@ function start() {
 
   checkCookieName();
   checkCookieCount();
-  cookieCounter ();
-  	
+  cookieCounter();
+  checkCookieTime()
+
 
   run_clock('clockdiv',deadline);
 
   jsoner();
-	
+
   modal.style.display = "none";
   document.getElementById("surveyElement").style = "display:visible;height:auto;width:50%";
   document.getElementById("left").style = "display:visible;height:auto;width:50%";
@@ -94,7 +105,7 @@ function run_clock(id,endtime){
 	var clock = document.getElementById(id);
 	function update_clock(){
 		var t = time_remaining(endtime);
-		clock.innerHTML = 'Time Remaining: '+t.minutes+':'+t.seconds;
+		clock.innerHTML = t.minutes+':'+t.seconds;
 		if(t.total<=0){
       clearInterval(timeinterval);
       alert("You have completed the exercise. Thank you for your participation.");
@@ -308,11 +319,14 @@ function jsoner() {
 }
 
 function update() {
-  console.log ("updatecount" + window.count);
   setCookie("userC", count, 365);
+  time_up = document.getElementById("clockdiv").innerHTML;
+  setCookie("userT", time_up, 365);
   jsoner();
   document.getElementById("kounter2").innerHTML = "Images Tagged: " + (count - 1);
 }
+
+var time_up;
 
 var cookieCNT;
 
