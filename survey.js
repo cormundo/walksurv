@@ -57,6 +57,8 @@ function checkCookieCount() {
       mLeft = parseInt(mLeft);
       time_in_minutes = mLeft;
       console.log(time_in_minutes);
+      current_time = Date.parse(new Date());
+      deadline = new Date(current_time + time_in_minutes*60*1000);
     } }
 
 function cookieCounter () {
