@@ -38,8 +38,7 @@ function checkCookieCount() {
     alert("Your Previous Count: " + userCNT);
     // make global count update
     cookieCNT = userCNT;
-    alert(cookieCNT);	  
-    cookieCounter ();
+    alert(cookieCNT);
     return;
   } 
   }
@@ -59,6 +58,8 @@ function start() {
 
   checkCookieName();
   checkCookieCount();
+  cookieCounter ();
+  	
 
   run_clock('clockdiv',deadline);
 
