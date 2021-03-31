@@ -296,7 +296,7 @@ function jsoner() {
 
 
   window.survey = new Survey.Model(json);
-  survey.surveyPostId = "7b6c29dc-4771-49e1-8403-16591350d697";
+  survey.surveyPostId = "9fcc1a78-d24c-4d2c-a93f-d5124399fa4f";
 
   survey
     .onComplete
@@ -305,7 +305,7 @@ function jsoner() {
       var results = PID + ":\n" + JSON.stringify(result.data, null, 3);
       window.count++;
 
-      survey.sendResult('3cc0bc85-2253-412d-a56c-cc7b82260de3');
+      survey.sendResult('cf5903e1-0f51-4169-b455-1548b19ea78b');
       update();
 
       survey.clear();
