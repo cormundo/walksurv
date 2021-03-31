@@ -35,10 +35,8 @@ function checkCookieName() {
 function checkCookieCount() {
   var userCNT = getCookie("userC");
   if (userCNT != "") {
-    alert("Your Previous Count: " + userCNT);
     // make global count update
     cookieCNT = userCNT;
-    alert(cookieCNT);
     return;
   } else {
       count = 1;
@@ -72,7 +70,6 @@ function cookieCounter () {
 
 function start() {
   username = document.getElementById("user_PID").value;
-  alert("your PID is " + username);
 
   checkCookieName();
   checkCookieCount();
