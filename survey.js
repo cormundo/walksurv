@@ -283,9 +283,10 @@ function jsoner() {
         {
          type: "rating",
          name: "Catchr",
+         rateMin: 0,
          visible: (catched),
-         title: "Approximately how many cars are in this image?",
-          minRateDescription: "Very few cars (1 or Zero)",
+         title: "Approximately how many cars can you count in this image?",
+          minRateDescription: "No cars",
           maxRateDescription: "Completely full of cars (5 or more)"
         }
       ]
@@ -296,7 +297,7 @@ function jsoner() {
 
 
   window.survey = new Survey.Model(json);
-  survey.surveyPostId = "9fcc1a78-d24c-4d2c-a93f-d5124399fa4f";
+  survey.surveyPostId = "e749f716-3042-42f7-983a-078426c54139";
 
   survey
     .onComplete
@@ -305,7 +306,7 @@ function jsoner() {
       var results = PID + ":\n" + JSON.stringify(result.data, null, 3);
       window.count++;
 
-      survey.sendResult('cf5903e1-0f51-4169-b455-1548b19ea78b');
+      survey.sendResult('8b9c4f4e-8fff-48c0-ba94-5e4478ef9adf');
       update();
 
       survey.clear();

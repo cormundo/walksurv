@@ -175,13 +175,13 @@ var surveyJSON = {
 
 function landed(survey) {
     var demog = JSON.stringify(survey.data, null, 3);
-    survey.sendResult('44536697-2354-41a0-afe9-fc49c26186f3');
+    survey.sendResult('597908c6-531e-4deb-91b7-f82d1fade324');
     console.log(demog)
     setTimeout(() => {  window.location.replace("survey.html");},3000);
 }
 
 var survey = new Survey.Model(surveyJSON);
-survey.surveyPostId = "9e660287-4841-4896-aaf4-b6d4f42efeee";
+survey.surveyPostId = "464448e3-2557-4118-ba6e-f730e98fa330";
 $("#surveyElement").Survey({
     model: survey,
     onComplete: landed
