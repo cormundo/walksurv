@@ -177,7 +177,7 @@ function landed(survey) {
     var demog = JSON.stringify(survey.data, null, 3);
     survey.sendResult('597908c6-531e-4deb-91b7-f82d1fade324');
     console.log(demog)
-    setTimeout(() => {  window.location.replace("survey.html");},3000);
+    setTimeout(() => {  window.location.replace("survey2.html");},3000);
 }
 
 var survey = new Survey.Model(surveyJSON);
